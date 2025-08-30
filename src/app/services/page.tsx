@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import {
   Palette,
@@ -18,9 +17,7 @@ import {
   Zap,
   ArrowRight,
   Calendar,
-  MessageCircle,
   CheckCircle,
-  Star,
   Shield,
   LucideIcon,
 } from "lucide-react";

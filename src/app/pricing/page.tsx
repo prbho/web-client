@@ -7,12 +7,9 @@ import {
   Smartphone,
   Gift,
   ShoppingCart,
-  CheckCircle,
   DollarSign,
-  DollarSignIcon,
 } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Hero from "@/components/Hero";
+import { motion } from "framer-motion";
 
 export default function Page() {
   const [rate, setRate] = useState(1200);

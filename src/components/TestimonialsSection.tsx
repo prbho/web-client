@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Quote, Star, Users, ArrowRight, CheckCircle } from "lucide-react";
+import { Quote, Star, ArrowRight, CheckCircle } from "lucide-react";
 import { useRef } from "react";
 
 interface Testimonial {
