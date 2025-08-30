@@ -41,11 +41,7 @@ export default function CallToAction({
     href: "/contact",
     icon: <Calendar className="w-5 h-5" />,
   },
-  secondaryAction = {
-    text: "View Our Work",
-    href: "/portfolio",
-    icon: <ArrowRight className="w-4 h-4" />,
-  },
+
   features = [
     { icon: <Check className="w-4 h-4" />, text: "Free consultation" },
     { icon: <Clock className="w-4 h-4" />, text: "24-hour response" },
@@ -107,23 +103,6 @@ export default function CallToAction({
                   </motion.span>
                 )}
                 {primaryAction.text}
-              </Link>
-            </motion.div>
-          )}
-
-          {secondaryAction && (
-            <motion.div whileHover={{ x: 5 }}>
-              <Link
-                href={secondaryAction.href}
-                className={`inline-flex items-center px-8 py-5 ${textColor} hover:opacity-80 transition-colors group`}>
-                {secondaryAction.text}
-                {secondaryAction.icon && (
-                  <motion.span
-                    className="ml-2 group-hover:translate-x-1 transition-transform"
-                    whileHover={{ x: 4 }}>
-                    {secondaryAction.icon}
-                  </motion.span>
-                )}
               </Link>
             </motion.div>
           )}
