@@ -61,28 +61,31 @@ export default function Footer({
     <footer className="bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}>
-          <Link href="/" className="flex items-center gap-3 mb-4">
-            <motion.div
-              className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}>
-              <Image
-                src={companyInfo.logo}
-                alt={`${companyInfo.name} Logo`}
-                width={40}
-                height={40}
-                className="object-contain"
-              />
-            </motion.div>
-            <span className="font-medium text-gray-900">
-              {companyInfo.name}
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center">
+              <motion.div
+                className="w-8 h-8 bg-gray-50 rounded-xl flex items-center justify-center"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}>
+                <Image
+                  src="/logo.png"
+                  alt={`${companyInfo.name} Logo`}
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+              </motion.div>
+            </Link>
+            <span className="font-medium text-slate-900 transition-all duration-300 text-sm">
+              Cofellow
             </span>
-          </Link>
+          </div>
           <p className="text-gray-600 text-sm mt-4">
             {companyInfo.description}
           </p>
