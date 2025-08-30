@@ -17,8 +17,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cofellow – Creative Design Agency",
-  description: "Branding, Web & UX Design Studio",
+  metadataBase: new URL("https://client.cofellow.com"),
+  title: {
+    default: "Cofellow Clients",
+    template: "%s – Cofellow Clients",
+  },
+  description: "We craft creative brands, websites, and digital experiences.",
+  openGraph: {
+    type: "website",
+    url: "https://clients.cofellow.com",
+    siteName: "Cofellow",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@co_fellow",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

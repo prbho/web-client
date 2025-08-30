@@ -1,3 +1,5 @@
+// app/work/[slug]/page.tsx
+
 import { getCaseStudyBySlug, getCaseStudySlugs } from "@/lib/caseStudies";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -6,19 +8,20 @@ import CaseStudyClient from "@/components/CaseStudyClient";
 
 // Configure marked to use synchronous parsing
 marked.setOptions({
-  async: false, // This ensures parse() returns a string, not a promise
+  async: false, // Ensures parse() returns a string, not a promise
 });
 
+// Generate static params for SSG
 export async function generateStaticParams() {
   return getCaseStudySlugs().map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+// Generate metadata for SEO/OG
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const post = getCaseStudyBySlug(params.slug);
+  const { slug } = await props.params; // ✅ Await params
+  const post = getCaseStudyBySlug(slug);
   if (!post) return { title: "Case Study Not Found" };
 
   return {
@@ -32,22 +35,22 @@ export async function generateMetadata({
   };
 }
 
-export default function CaseStudyPage({
-  params,
-}: {
-  params: { slug: string };
+// Page component
+export default async function CaseStudyPage(props: {
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getCaseStudyBySlug(params.slug);
+  const { slug } = await props.params; // ✅ Await params
+  const post = getCaseStudyBySlug(slug);
+
   if (!post) return notFound();
 
-  // Parse markdown content synchronously and assert it's a string
   const htmlContent = marked.parse(post.content) as string;
 
   return (
     <CaseStudyClient
       post={{
         ...post,
-        htmlContent, // Now TypeScript knows this is a string
+        htmlContent,
       }}
     />
   );

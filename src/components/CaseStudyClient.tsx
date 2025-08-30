@@ -1,3 +1,5 @@
+// components/CaseStudyClients.tsx
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -26,7 +28,6 @@ interface CaseStudyClientProps {
       client?: string;
       year?: string;
       role?: string;
-      // Remove any extra properties that shouldn't be there
     };
     htmlContent: string;
   };
