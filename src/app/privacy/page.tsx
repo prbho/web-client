@@ -32,14 +32,14 @@ export default function PrivacyPolicy() {
               1. Introduction
             </h2>
             <p>
-              Cofellow ("we", "our", "us") is committed to protecting your
-              privacy. This Privacy Policy explains how we collect, use,
-              disclose, and safeguard your information when you visit our
-              website{" "}
+              Cofellow (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is
+              committed to protecting your privacy. This Privacy Policy explains
+              how we collect, use, disclose, and safeguard your information when
+              you visit our website{" "}
               <Link href="/" className="text-cyan-600 hover:underline">
                 cofellow.com
               </Link>{" "}
-              (the "Site").
+              (the &quot;Site&quot;).
             </p>
             <p className="mt-4">
               Please read this policy carefully. By using our Site, you agree to
@@ -127,9 +127,9 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 mt-4 space-y-2">
               <li>
                 <strong>Service Providers:</strong> With third-party companies
-                and individuals to facilitate our Site ("Service Providers"),
-                perform Site-related services, or assist us in analyzing how our
-                Site is used
+                and individuals to facilitate our Site (&quot;Service
+                Providers&quot;), perform Site-related services, or assist us in
+                analyzing how our Site is used
               </li>
               <li>
                 <strong>Business Transfers:</strong> In connection with any
@@ -230,7 +230,7 @@ export default function PrivacyPolicy() {
             <p>
               We may update our Privacy Policy from time to time. We will notify
               you of any changes by posting the new Privacy Policy on this page
-              and updating the "Last updated" date.
+              and updating the &quot;Last updated&quot; date.
             </p>
             <p className="mt-4">
               You are advised to review this Privacy Policy periodically for any

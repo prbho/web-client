@@ -55,7 +55,6 @@ export default function Footer({
     },
   ],
   copyrightText = `© ${new Date().getFullYear()} Cofellow. All rights reserved.`,
-  accentColor = "text-cyan-600",
 }: FooterProps) {
   return (
     <footer className="bg-white border-t border-gray-100">

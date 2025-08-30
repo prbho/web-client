@@ -2,7 +2,7 @@
 
 import { InlineWidget } from "react-calendly";
 import { motion } from "framer-motion";
-import { Calendar, Clock, Video } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export default function CalendlyWidget() {
   return (

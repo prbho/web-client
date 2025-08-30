@@ -1,27 +1,14 @@
 "use client";
 
-import { serviceCategories } from "@/const";
-import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Briefcase,
-  Calendar,
-  CheckCircle,
-  Filter,
-  Grid,
-  Shield,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, CheckCircle, Shield } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import CallToAction from "./CallToAction";
 
 export default function WorkPageClient({ projects }: { projects: any[] }) {
-  const [filter, setFilter] = useState<string>("all");
-
-  // Get unique tags for filtering
-  const allTags = Array.from(
-    new Set(projects.flatMap((p) => p.metadata.tags || []))
-  );
+  const [filter] = useState<string>("all");
 
   const filteredProjects =
     filter === "all"
@@ -35,19 +22,6 @@ export default function WorkPageClient({ projects }: { projects: any[] }) {
       transition: {
         delayChildren: 0.3,
         staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
       },
     },
   };
@@ -87,43 +61,6 @@ export default function WorkPageClient({ projects }: { projects: any[] }) {
               crafted for forward-thinking companies.
             </p>
           </motion.div>
-          {/* Filter Navigation */}
-
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <motion.button
-                onClick={() => setFilter("all")}
-                className={`px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 flex items-center gap-2 ${
-                  filter === "all"
-                    ? "bg-cyan-700 text-white shadow-lg shadow-cyan-700/25"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200"
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}>
-                <Grid className="w-4 h-4" />
-                All Work
-              </motion.button>
-              {allTags.map((tag) => (
-                <motion.button
-                  key={tag}
-                  onClick={() => setFilter(tag)}
-                  className={`px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 capitalize flex items-center gap-2 ${
-                    filter === tag
-                      ? "bg-cyan-700 text-white shadow-lg shadow-cyan-700/25"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50 border border-slate-200"
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}>
-                  <CheckCircle className="w-4 h-4" />
-                  {tag}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div> */}
         </div>
       </section>
 

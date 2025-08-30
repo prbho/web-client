@@ -2,8 +2,6 @@
 
 "use client";
 
-import { useState } from "react";
-
 type Props = {
   selectedTypes: string[];
   onTypeChange: (types: string[]) => void;

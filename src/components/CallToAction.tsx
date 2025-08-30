@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Calendar, ArrowRight, Zap, Clock, Check } from "lucide-react";
+import { Calendar, ArrowRight, Clock, Check } from "lucide-react";
 
 interface CTAProps {
   title: {

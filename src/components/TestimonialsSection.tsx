@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Quote, Star, ArrowRight, CheckCircle } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 
 interface Testimonial {
@@ -120,7 +121,7 @@ const TestimonialCard = ({
 
         {/* Quote text with better typography */}
         <blockquote className="text-xl text-gray-800 leading-relaxed mb-8 font-light">
-          "{testimonial.quote}"
+          &quot;{testimonial.quote}&quot;
         </blockquote>
 
         {/* Results badge */}
@@ -135,7 +136,7 @@ const TestimonialCard = ({
             {/* Avatar with actual image */}
             <div className="relative">
               <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-gray-200 group-hover:border-cyan-300 transition-all duration-300 shadow-sm">
-                <img
+                <Image
                   src={testimonial.avatar}
                   alt={testimonial.name}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -226,7 +227,7 @@ const TestimonialsSection = () => {
           </h2>
           <div className="w-20 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how we've helped businesses transform their digital
+            Discover how we&quot;ve helped businesses transform their digital
             presence and achieve remarkable growth through strategic design and
             development.
           </p>
@@ -257,7 +258,7 @@ const TestimonialsSection = () => {
                   <div
                     key={i}
                     className="w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-                    <img
+                    <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
                       className="w-full h-full object-cover"

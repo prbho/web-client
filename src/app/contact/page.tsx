@@ -5,10 +5,8 @@ import ContactFormSection from "@/components/ContactFormSection";
 import ContactInfo from "@/components/ContactInfo";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState } from "react";
 
 const ContactPage = () => {
-  const [mode, setMode] = useState<"form" | "calendly">("form");
   const { scrollY } = useScroll();
   const headerY = useTransform(scrollY, [0, 300], [0, -50]);
   const headerOpacity = useTransform(scrollY, [0, 300], [1, 0.8]);

@@ -70,19 +70,6 @@ export default function Hero({
     },
   };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
-      },
-    },
-  };
-
   return (
     <section
       className={`relative ${minHeight} flex flex-col items-center justify-center px-6 md:px-12 py-32 ${background}`}>

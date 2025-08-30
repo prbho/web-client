@@ -14,6 +14,7 @@ import {
 import ClientCallToAction from "./ClientCallToAction";
 import ShareButtons from "./ShareButtons";
 import TableOfContents from "./TableOfContents";
+import Image from "next/image";
 
 interface CaseStudyClientProps {
   post: {
@@ -81,19 +82,6 @@ export default function EnhancedCaseStudy({ post }: CaseStudyClientProps) {
       transition: {
         delayChildren: 0.3,
         staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
       },
     },
   };
@@ -188,7 +176,7 @@ export default function EnhancedCaseStudy({ post }: CaseStudyClientProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}>
           <div className="aspect-video overflow-hidden rounded-3xl bg-slate-50 border border-slate-100 shadow-2xl shadow-slate-900/10 relative group">
-            <img
+            <Image
               src={post.metadata.image}
               alt={post.metadata.title}
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"

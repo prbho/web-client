@@ -32,12 +32,13 @@ export default function Page() {
               1. Introduction
             </h2>
             <p>
-              Welcome to Cofellow ("Company", "we", "our", "us"). These Terms
-              and Conditions ("Terms") govern your use of our website located at{" "}
+              Welcome to Cofellow (&quot;Company&quot;, &quot;we&quot;,
+              &quot;our&quot;, &quot;us&quot;). These Terms and Conditions
+              (&quot;Terms&quot;) govern your use of our website located at{" "}
               <Link href="/" className="text-cyan-600 hover:underline">
                 cofellow.com
               </Link>{" "}
-              (the "Site") and our services.
+              (the &quot;Site&quot;) and our services.
             </p>
             <p className="mt-4">
               By accessing or using our Site and services, you agree to be bound
@@ -145,9 +146,9 @@ export default function Page() {
             <p>
               We reserve the right to modify these Terms at any time. We will
               provide notice of any changes by posting the updated Terms on the
-              Site and updating the "Last updated" date. Your continued use of
-              the Site after any changes constitutes your acceptance of the new
-              Terms.
+              Site and updating the &quot;Last updated&quot; date. Your
+              continued use of the Site after any changes constitutes your
+              acceptance of the new Terms.
             </p>
           </section>
 

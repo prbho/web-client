@@ -2,7 +2,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 import {
   Eye,
   Users,
@@ -15,8 +14,6 @@ import {
   Heart,
   Award,
   Zap,
-  ArrowRight,
-  Mail,
   Calendar,
   CheckCircle,
   Shield,
@@ -188,31 +185,6 @@ const TeamMember = ({ role, icon: Icon, delay = 0 }: TeamMemberProps) => (
 export default function AboutPage() {
   const { scrollY } = useScroll();
   const headerY = useTransform(scrollY, [0, 300], [0, -50]);
-  const headerOpacity = useTransform(scrollY, [0, 300], [1, 0.8]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
-      },
-    },
-  };
 
   return (
     <main className="bg-white text-gray-900 overflow-hidden">

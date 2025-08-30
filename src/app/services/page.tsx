@@ -21,7 +21,6 @@ import {
   Shield,
   LucideIcon,
 } from "lucide-react";
-import PricingWithConversion from "@/components/PricingWithConversion";
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 
@@ -180,31 +179,6 @@ export default function ServicesPage() {
   const [activeService, setActiveService] = useState<string | null>(null);
   const { scrollY } = useScroll();
   const headerY = useTransform(scrollY, [0, 300], [0, -50]);
-  const headerOpacity = useTransform(scrollY, [0, 300], [1, 0.8]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
-      },
-    },
-  };
 
   return (
     <main className="bg-white text-gray-900 overflow-hidden">
