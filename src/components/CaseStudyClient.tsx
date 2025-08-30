@@ -21,11 +21,12 @@ interface CaseStudyClientProps {
     metadata: {
       title: string;
       description: string;
-      image?: string; // This should be string, not an object
+      image?: string;
       tags?: string[];
       client?: string;
       year?: string;
       role?: string;
+      // Remove any extra properties that shouldn't be there
     };
     htmlContent: string;
   };

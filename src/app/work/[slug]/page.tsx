@@ -4,6 +4,11 @@ import { Metadata } from "next";
 import { marked } from "marked";
 import CaseStudyClient from "@/components/CaseStudyClient";
 
+// Configure marked to use synchronous parsing
+marked.setOptions({
+  async: false, // This ensures parse() returns a string, not a promise
+});
+
 export async function generateStaticParams() {
   return getCaseStudySlugs().map((slug) => ({ slug }));
 }
@@ -35,14 +40,14 @@ export default function CaseStudyPage({
   const post = getCaseStudyBySlug(params.slug);
   if (!post) return notFound();
 
-  // Parse markdown content
-  const htmlContent = marked.parse(post.content);
+  // Parse markdown content synchronously and assert it's a string
+  const htmlContent = marked.parse(post.content) as string;
 
   return (
     <CaseStudyClient
       post={{
         ...post,
-        htmlContent,
+        htmlContent, // Now TypeScript knows this is a string
       }}
     />
   );
