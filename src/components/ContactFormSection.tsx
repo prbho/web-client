@@ -46,7 +46,7 @@ const ContactFormSection = () => {
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/mjkeynzj", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,8 @@ const ContactFormSection = () => {
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
+      // Removed the unused 'error' parameter to fix the warning
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

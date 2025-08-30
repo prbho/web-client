@@ -9,7 +9,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ToolsSection from "@/components/ToolsSection";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle, Shield, Zap } from "lucide-react";
-import { useState, useEffect } from "react";
 
 // Animated background component
 const AnimatedBackground = () => {

@@ -12,7 +12,7 @@ import {
 import { motion } from "framer-motion";
 
 export default function Page() {
-  const [rate, setRate] = useState(1200);
+  const [rate] = useState(1200);
   const [currency, setCurrency] = useState<"USD" | "NGN">("NGN");
   const [userLocation, setUserLocation] = useState<"NG" | "INTL" | null>(null);
   const [discountApplied, setDiscountApplied] = useState(false);
@@ -137,7 +137,7 @@ export default function Page() {
 
           {/* Pricing Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {pricingTiers.map((tier, idx) => {
+            {pricingTiers.map((tier) => {
               const showDiscount = discountApplied && currency === "NGN";
               const originalPrice = calculateOriginalPrice(tier.basePrice);
               const discountedPrice = calculatePrice(tier.basePrice);

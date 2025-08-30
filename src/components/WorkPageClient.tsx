@@ -7,7 +7,24 @@ import Link from "next/link";
 import { useState } from "react";
 import CallToAction from "./CallToAction";
 
-export default function WorkPageClient({ projects }: { projects: any[] }) {
+// Define interfaces for your project data structure
+interface ProjectMetadata {
+  title: string;
+  description: string;
+  image: string;
+  tags?: string[];
+}
+
+interface Project {
+  slug: string;
+  metadata: ProjectMetadata;
+}
+
+interface WorkPageClientProps {
+  projects: Project[];
+}
+
+export default function WorkPageClient({ projects }: WorkPageClientProps) {
   const [filter] = useState<string>("all");
 
   const filteredProjects =
@@ -53,9 +70,6 @@ export default function WorkPageClient({ projects }: { projects: any[] }) {
                 </span>
               </>
             </motion.h1>
-            {/* <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-              Simple, fair pricing
-            </h1> */}
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A curated collection of brand identities and digital experiences
               crafted for forward-thinking companies.
@@ -149,8 +163,8 @@ export default function WorkPageClient({ projects }: { projects: any[] }) {
           </motion.div>
         </div>
       </section>
-      {/* CTA Section */}
 
+      {/* CTA Section */}
       <CallToAction
         title={{
           text: "Have a project in mind?",

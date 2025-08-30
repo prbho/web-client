@@ -21,7 +21,7 @@ interface CaseStudyClientProps {
     metadata: {
       title: string;
       description: string;
-      image?: string;
+      image?: string; // This should be string, not an object
       tags?: string[];
       client?: string;
       year?: string;
@@ -73,7 +73,7 @@ export default function EnhancedCaseStudy({ post }: CaseStudyClientProps) {
     headings.forEach((heading, index) => {
       heading.id = `heading-${index}`;
     });
-  }, []);
+  }, [post.htmlContent]); // Added post.htmlContent to dependency array
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -179,7 +179,8 @@ export default function EnhancedCaseStudy({ post }: CaseStudyClientProps) {
             <Image
               src={post.metadata.image}
               alt={post.metadata.title}
-              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
