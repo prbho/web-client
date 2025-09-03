@@ -58,7 +58,7 @@ export default function Footer({
 }: FooterProps) {
   return (
     <footer className="bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {/* Company Info */}
 
         <motion.div
@@ -91,33 +91,36 @@ export default function Footer({
         </motion.div>
 
         {/* Navigation Columns */}
-        {navigationLinks.map((column, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}>
-            <h4 className="font-medium text-gray-900 mb-4">{column.title}</h4>
-            <ul className="space-y-3">
-              {column.links.map((link, linkIndex) => (
-                <motion.li
-                  key={linkIndex}
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 300 }}>
-                  <Link
-                    href={link.href}
-                    className={`text-gray-600 hover:text-gray-900 text-sm flex items-center gap-2 transition-colors ${
-                      linkIndex === 0 ? "mt-0" : ""
-                    }`}>
-                    <ArrowRight className="w-3 h-3 text-cyan-600 group-hover:text-cyan-600" />
-                    {link.label}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-8">
+          {navigationLinks.map((column, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="">
+              <h4 className="font-medium text-gray-900 mb-4">{column.title}</h4>
+              <ul className="space-y-3">
+                {column.links.map((link, linkIndex) => (
+                  <motion.li
+                    key={linkIndex}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 300 }}>
+                    <Link
+                      href={link.href}
+                      className={`text-gray-600 hover:text-gray-900 text-sm flex items-center gap-2 transition-colors ${
+                        linkIndex === 0 ? "mt-0" : ""
+                      }`}>
+                      <ArrowRight className="w-3 h-3 text-cyan-600 group-hover:text-cyan-600" />
+                      {link.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
 
         {/* Contact Info */}
         <motion.div

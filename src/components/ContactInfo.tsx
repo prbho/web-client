@@ -76,7 +76,7 @@ const ContactInfo = () => {
       </div>
 
       {/* Contact Cards Grid */}
-      <div className="grid md:grid-cols-3 gap-x-2">
+      <div className="grid md:grid-cols-3 gap-2">
         {contactItems.map((item, index) => {
           const colors =
             colorVariants[item.color as keyof typeof colorVariants];

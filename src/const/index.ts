@@ -78,6 +78,7 @@ export const serviceCategories = [
 export const navigationLinks = [
   {
     title: "Explore",
+    className: "grid grid-cols-1 gap-2",
     links: [
       { href: "/services", label: "Services" },
       { href: "/work", label: "Work" },
@@ -87,6 +88,7 @@ export const navigationLinks = [
   },
   {
     title: "Legal",
+    className: "grid grid-cols-1 gap-2",
     links: [
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },

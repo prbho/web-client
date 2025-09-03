@@ -139,6 +139,8 @@ const TestimonialCard = ({
                 <Image
                   src={testimonial.avatar}
                   alt={testimonial.name}
+                  width={64}
+                  height={64}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
@@ -261,6 +263,8 @@ const TestimonialsSection = () => {
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
+                      width={64}
+                      height={64}
                       className="w-full h-full object-cover"
                     />
                   </div>
